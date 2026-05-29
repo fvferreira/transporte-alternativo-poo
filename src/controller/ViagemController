@@ -1,0 +1,55 @@
+package controller;
+
+import model.Viagem;
+import model.Veiculo;
+import model.Passageiro;
+import model.Motorista;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ViagemController {
+    private List<Viagem> viagens;
+
+    public ViagemController() {
+        this.viagens = new ArrayList<>();
+    }
+
+    public boolean cadastrarViagem(Viagem novaViagem) {
+        if (novaViagem.getMotorista() == null) {
+            return false;
+        }
+
+        for (Viagem v : viagens) {
+            if (v.getVeiculo().equals(novaViagem.getVeiculo()) && v.getHorario().equals(novaViagem.getHorario())) {
+                return false;
+            }
+        }
+        
+        viagens.add(novaViagem);
+        return true;
+    }
+
+    public boolean verificarConflitoPassageiro(Passageiro p, String horario) {
+        for (Viagem v : viagens) {
+            if (v.getPassageiros().contains(p) && v.getHorario().equals(horario)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public double processarCancelamento(double valorViagem, int horasRestantes) {
+        if (horasRestantes < 24) {
+            return valorViagem * 0.9;
+        }
+        return valorViagem;
+    }
+
+    public List<Viagem> listarViagens() {
+        return new ArrayList<>(viagens);
+    }
+    
+    public void excluirViagem(String id) {
+        viagens.removeIf(v -> v.getId().equals(id));
+    }
+}
