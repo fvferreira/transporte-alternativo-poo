@@ -74,4 +74,6 @@ public abstract class Usuario {
         this.senha = senha;
     }
 
+    public abstract String listar();
+
 }
