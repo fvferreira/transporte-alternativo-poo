@@ -18,7 +18,7 @@ public class UsuarioController {
 
     public Usuario autenticar(String email, String senha) {
         for (Usuario u : usuarios) {
-            if (u.realizarLogin(email, email)) {
+            if (u.realizarLogin(email, senha)) {
                 return u;
             }
         }

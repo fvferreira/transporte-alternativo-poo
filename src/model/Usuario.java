@@ -31,50 +31,18 @@ public abstract class Usuario {
         this.senha = senha;
     }
 
-    public String getId() {
-        return id;
-    }
+    public String getId() { return id; }
+    public String getNome() { return nome; }
+    public String getCpf() { return cpf; }
+    public String getTelefone() { return telefone; }
+    public String getEmail() { return email; }
+    public String getSenha() { return senha; }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
+    public void setNome(String nome) { this.nome = nome; }
+    public void setCpf(String cpf) { this.cpf = cpf; }
+    public void setTelefone(String telefone) { this.telefone = telefone; }
+    public void setEmail(String email) { this.email = email; }
+    public void setSenha(String senha) { this.senha = senha; }
 
     public abstract String listar();
-
 }

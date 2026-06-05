@@ -5,12 +5,12 @@ public class Passageiro extends Usuario {
     private double saldoCarteira;
 
     public Passageiro(String id, String nome, String cpf, String telefone, String email, String senha, double saldoCarteira) {
-        super(id, nome, id, telefone, email, senha);
+        super(id, nome, cpf, telefone, email, senha);
         this.saldoCarteira = saldoCarteira;
     }
 
     public void cadastrar(String id, String nome, String cpf, String telefone, String email, String senha) {
-        realizarCadastro(id, nome, id, telefone, email, senha);
+        realizarCadastro(id, nome, cpf, telefone, email, senha);
         this.saldoCarteira = 0;
     }
 
@@ -35,12 +35,6 @@ public class Passageiro extends Usuario {
         this.saldoCarteira += valor;
     }
 
-    public double getSaldo() {
-        return saldoCarteira;
-    }
-
-    public void setSaldoCarteira(double saldoCarteira) {
-        this.saldoCarteira = saldoCarteira;
-    }
-
+    public double getSaldo() { return saldoCarteira; }
+    public void setSaldoCarteira(double saldoCarteira) { this.saldoCarteira = saldoCarteira; }
 }
